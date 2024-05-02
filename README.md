@@ -2,8 +2,6 @@
 
 내배캠 스프링 수강생들을 관리하는 프로그램입니다.
 
-<iframe src="https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/eef815ed-6ea9-4360-8663-53209c24dd9b/%EC%9E%90%EB%B0%94%ED%8C%80%EA%B3%BC%EC%A0%9C%EA%B0%80%EC%9D%B4%EB%93%9C%EC%98%81%EC%83%81.mp4?id=58749dc8-3020-4e69-99b3-cc81c029069c&table=block&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1714701600000&signature=ItMBHZLH2XfKjc97rlsekExwt-Q1VQLxaiUowzWL5SY" title="description"></iframe>
-
 #### 요구 사항 정의
 
 <details>
