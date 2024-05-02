@@ -68,10 +68,13 @@
 
 #### 기능 명세서
 
+
 <details>
 <summary>필수 요구 사항</summary>
 <div markdown="1">
-
+<table style="border-collapse: collapse; border: none;">
+<tr>
+<td style="border: none; vertical-align: top;">
 <details>
 <summary>수강생 관리</summary>
 <div markdown="1">
@@ -96,6 +99,7 @@
 </div>
 </details>
 
+
 <details>
 <summary>점수 관리</summary>
 <div markdown="1">
@@ -116,9 +120,16 @@
      |-------------|
      |고유 번호|
      |이름|
-    
+
 </div>
 </details>
 
+</div>
+</details>
+</div>
+</details>
+</td>
+</tr>
+</table>
 </div>
 </details>
