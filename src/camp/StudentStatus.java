@@ -1,7 +1,7 @@
 package camp;
 
 /*
-* 수강생의 상태를 나타내는 enum test
+* 수강생의 상태를 나타내는 enum testdd
 * */
 public enum StudentStatus {
     GREEN("Green"), // 좋음
