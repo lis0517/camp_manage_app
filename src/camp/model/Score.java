@@ -82,7 +82,6 @@ public class Score {
     public void setScore(int score) {
         this.score = score;
         }
-    }
 
     /**
      * 등급을 반환하는 메서드
