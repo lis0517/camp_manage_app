@@ -1,5 +1,8 @@
 package camp.view;
 
+import camp.model.Score;
+
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -28,6 +31,21 @@ public class ScoreView {
         System.out.print("관리 항목을 선택하세요...");
         return scanner.nextInt();
     }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
+
+    public void displayScores(List<Score> scores, List<String> gradeList){
+        System.out.println("점수 목록");
+        for (int i = 0; i < scores.size(); i++) {
+            Score score = scores.get(i);
+            String grade = gradeList.get(i);
+            System.out.println("점수: " + score.getScore() + ", 등급: " + grade);
+        }
+    }
+
+
 
     // ... 필요한 내용 더 구현
 
