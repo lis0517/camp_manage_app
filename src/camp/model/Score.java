@@ -81,16 +81,6 @@ public class Score {
      */
     public void setScore(int score) {
         this.score = score;
-        if (score >= 90) {
-            this.grade = "A";
-        } else if (score >= 80) {
-            this.grade = "B";
-        } else if (score >= 70) {
-            this.grade = "C";
-        } else if (score >= 60) {
-            this.grade = "D";
-        } else {
-            this.grade = "F";
         }
     }
 
