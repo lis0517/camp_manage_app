@@ -1,0 +1,89 @@
+@startuml
+entity Student {
+    studentId: string <<PK>>
+    studentName: string
+    status: StudentStatus
+    subjects: List<Subject>
+}
+
+entity Subject {
+    subjectId: string <<PK>>
+    subjectName: string
+    subjectType: SubjectType
+}
+
+entity Score {
+    scoreId: string <<PK>>
+    studentId: string <<FK>>
+    subjectId: string <<FK>>
+    round: int
+    score: int
+    grade: string
+}
+
+class StudentPresenter {
+    studentView: StudentView
+    studentList: List<Student>
+    subjectPresenter: SubjectPresenter
+    registerStudent(): void
+    displayStudentList(): void
+    findStudentByName(name: string): Student
+    findSubjectByName(student: Student, subjectName: string): Subject
+}
+
+class SubjectPresenter {
+    subjectView: SubjectView
+    subjectList: List<Subject>
+    selectSubjects(type: SubjectType, minCount: int): List<Subject>
+}
+
+class ScorePresenter {
+    scoreView: ScoreView
+    scoreList: List<Score>
+    studentPresenter: StudentPresenter
+    manageScore(): void
+    registerScore(): void
+    updateScore(): void
+    displayGrade(): void
+    getGrade(type: SubjectType, score: int): string
+}
+
+class StudentView {
+    scanner: Scanner
+    displayStudentMenu(): int
+    getStudentName(): string
+    displayStudentList(studentList: List<Student>): void
+}
+
+class SubjectView {
+    scanner: Scanner
+    getSubjectName(): string
+    displaySubjectList(type: SubjectType, subjectList: List<Subject>): void
+}
+
+class ScoreView {
+    scanner: Scanner
+    displayScoreMenu(): int
+    getStudentName(): string
+    getSubjectName(): string
+    getRound(): int
+    getScore(): int
+    displayScores(studentName: string, subjectName: string, scores: List<Score>): void
+}
+
+Student "1" --o "many" Subject : 수강
+Student "1" --o "many" Score : 획득
+Subject "1" --o "many" Score : 평가
+
+StudentPresenter "1" -- "1" StudentView : 상호작용
+StudentPresenter "1" --o "many" Student : 관리
+StudentPresenter "1" -- "1" SubjectPresenter : 참조
+
+SubjectPresenter "1" -- "1" SubjectView : 상호작용
+SubjectPresenter "1" --o "many" Subject : 관리
+
+ScorePresenter "1" -- "1" ScoreView : 상호작용
+ScorePresenter "1" --o "many" Score : 관리
+ScorePresenter "1" -- "1" StudentPresenter : 참조
+
+@enduml
