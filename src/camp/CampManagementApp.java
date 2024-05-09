@@ -21,8 +21,6 @@ public class CampManagementApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        //ex. StudentPesenter = new StudentPresenter(new StudentView(scanner));
-
         mainView = new MainView(scanner);
         studentPresenter = new StudentPresenter(new StudentView(scanner));
         scorePresenter = new ScorePresenter(new ScoreView(scanner));
@@ -38,15 +36,12 @@ public class CampManagementApp {
 
 
             switch (input){
-                // case 1,2,3에 자기가 연결한 기능을 추가해서 테스트해보기
-//                case 1 -> {
-//                    System.out.println("학생 등록 화면으로 이동합니다."); //학생 등록
-//                    int studentInput = studentPresenter.displayStudentMenu();// StudentPresenter 에 Menu호출메서드추가.
-//                }
-//                case 2 -> {
-//                    System.out.println("점수 관리 화면으로 이동합니다.");// 점수 등록
-//                    int scoreInput = scorePresenter.displayScoreMenu();// ScorePresenter 에 Menu호출메서드추가.
-//                }
+                 case 1 -> {
+                    studentPresenter.manageStudent();
+                 }
+                case 2 -> {
+                    scorePresenter.manageScore();
+                 }
                 case 3 -> {
                     exit = true;
                     System.out.println("프로그램을 종료합니다.");
