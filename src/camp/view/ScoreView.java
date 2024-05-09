@@ -32,21 +32,55 @@ public class ScoreView {
         return scanner.nextInt();
     }
 
-    public void displayMessage(String message) {
-        System.out.println(message);
+    // ... 필요한 내용 더 구현
+
+    public String getStudentId(){
+        System.out.println("수강생 ID를 입력하세요 : ");
+        return scanner.next();
     }
 
-    public void displayScores(List<Score> scores, List<String> gradeList){
-        System.out.println("점수 목록");
-        for (int i = 0; i < scores.size(); i++) {
-            Score score = scores.get(i);
-            String grade = gradeList.get(i);
-            System.out.println("점수: " + score.getScore() + ", 등급: " + grade);
+    public String getSubjectId(){
+        System.out.println("과목 ID를 입력하세요 : ");
+        return scanner.next();
+    }
+
+    // 시험회차를 입력받아 1미만 10초과할 경우 오류메세지 출력
+    public int getRound(){
+        while (true){
+            System.out.println("시험 회차를 입력하세요 : ");
+            int round = scanner.nextInt();
+            if(round < 1 || round > 10){
+                System.out.println("회차에 1미만 10초과 수가 저장될 수 없습니다. ");
+                continue;
+            }
+            return round;
         }
     }
 
+    //점수를 입력받아 0미만 100초과할 경우 오류 메세지 출력
+    public int getScore(){
+        while (true){
+            System.out.println("점수를 입력하세요 : ");
+            int score = scanner.nextInt();
+            if(score < 0 || score > 100){
+                System.out.println("점수에 100초과 및 음수가 저장될 수 없습니다.");
+                continue;
+            }
+            return score;
+        }
+    }
 
+    //점수목록 출력 해당 학생과 과목에 대한 점수 목록을 받아 출력
+    public void displayScores(String studentId, String subjectId, List<Score> scores) {
+        System.out.println("점수 목록:");
+        System.out.println("학생 ID: " + studentId + ", 과목 ID: " + subjectId);
 
-    // ... 필요한 내용 더 구현
-
+        for (Score score : scores) {
+            System.out.println(
+                    "회차: " + score.getRound() +
+                            ", 점수: " + score.getScore() +
+                            ", 등급: " + score.getGrade());
+        }
+    }
 }
+
