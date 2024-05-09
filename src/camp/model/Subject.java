@@ -29,8 +29,10 @@ public class Subject {
         return subjectName;
     }
 
-    public String getSubjectType() {
+    public String getSubjectTypeText() {
         return subjectType.getTypeText();
     }
+
+    public SubjectType getSubjectType() { return subjectType; }
 
 }
