@@ -12,8 +12,14 @@ import java.util.List;
  * 수강생 관리 기능을 담당하는 Presenter 클래스
  */
 public class StudentPresenter {
+
+    private static final int MANDATORY_SUBJECT_MIN_COUNT = 3; // 코드에 2, 3 같이 직접 입력하지않는 것이 좋습니다.
+    private static final int CHOICE_SUBJECT_MIN_COUNT = 2;
+
     private StudentView studentView;
     private List<Student> studentList;
+
+    private SubjectPresenter subjectPresenter;
 
     /**
      * StudentPresenter 생성자
@@ -23,17 +29,32 @@ public class StudentPresenter {
     public StudentPresenter(StudentView studentView) {
         this.studentView = studentView;
         this.studentList = new ArrayList<>();
-        this.subjectPresenter=null;
+        this.subjectPresenter = null;
     }
 
+    /**
+     * SubjectPresenter를 설정하는 메서드
+     *
+     * @param subjectPresenter 설정할 SubjectPresenter 객체
+     */
+    public void setSubjectPresenter(SubjectPresenter subjectPresenter){
+        this.subjectPresenter = subjectPresenter;
+    }
+
+
+    /**
+     * 수강생 관리 메뉴를 실행하는 메서드
+     */
     public void manageStudent() {
         while (true) {
             int input = studentView.displayStudentMenu();
 
             switch (input) {
-                case 1 -> registerStudent();
-                case 2 -> displayStudentList();
-                case 3 -> {
+                case 1 -> registerStudent(); // 수강생 등록
+                case 2 -> displayStudentList(); // 수강생 전체 목록 보기
+                case 3 -> updateStudentStatus(); // 수강생 상태 관리
+                case 4 -> displayStudentInfo(); // 특정 수강생 정보 보기
+                case 5 -> {
                     return;
                 }
                 default -> System.out.println("잘못된 입력입니다.");
@@ -41,52 +62,138 @@ public class StudentPresenter {
         }
     }
 
+    /**
+     * 수강생을 등록하는 메서드
+     */
     public void registerStudent(){
         System.out.println("==================================");
-        System.out.println("학생 정보를 등록합니다...");
+        System.out.println("수강생을 등록합니다...");
 
         String name = studentView.getStudentName();
-        // TODO : 과목 선택은 과목 담당자에게 요청 및 선택된 과목리스트가 넘어온다고 가정
-        List<Subject> mandatorySubjects = selectSubjects(SubjectType.MANDATORY, 3);
-        List<Subject> choiceSubjects = selectSubjects(SubjectType.CHOICE, 2);
+        // 필수 과목 고르기
+        List<Subject> mandatorySubjects = selectSubjects(SubjectType.MANDATORY, MANDATORY_SUBJECT_MIN_COUNT);
+        // 선택 과목 고르기
+        List<Subject> choiceSubjects = selectSubjects(SubjectType.CHOICE, CHOICE_SUBJECT_MIN_COUNT);
 
-        // 최소 개수가 모자라면 어떻게 할지도 생각해보시면 좋습니다.
+        if ( mandatorySubjects.size() < MANDATORY_SUBJECT_MIN_COUNT || choiceSubjects.size() < CHOICE_SUBJECT_MIN_COUNT ){
+            System.out.println("필수 과목 또는 선택 과목 선택이 부족합니다. 수강생 등록을 취소합니다.");
+            return;
+        }
 
-        // 넘어온 리스트 합쳐서 등록하기
-        List<Subject> allSubjects = new ArrayList<>();
-        allSubjects.addAll(mandatorySubjects);
+        // 필수, 선택 리스트를 한 리스트로 합침
+        List<Subject> allSubjects = new ArrayList<>(mandatorySubjects);
         allSubjects.addAll(choiceSubjects);
-        // 기능 구현
+
+        studentList.add(new Student(generateStudentId(), name, allSubjects));
         System.out.println("수강생 등록 성공!\n");
     }
 
+    /**
+     * 수강생 목록을 출력하는 메서드
+     */
     public void displayStudentList(){
         System.out.println("==================================");
         System.out.println("수강생 목록을 조회합니다...");
         studentView.displayStudentList(studentList);
     }
-    //이름으로 찾아오기.
-    public Student findByName(String name){
+
+    /**
+     * 수강생의 상태를 업데이트하는 메서드
+     */
+    public void updateStudentStatus(){
+        System.out.println("==================================");
+        System.out.println("수강생의 상태를 관리합니다...");
+
+        Student student = findStudentByName(studentView.getStudentName());
+        if ( student == null ){
+            System.out.println("등록되어있지않은 수강생입니다.");
+            return;
+        }
+
+        String status = studentView.getStudentStatus();
+
+        student.setStatus(status);
+        System.out.println("수강생 상태 변경 성공!\n");
+    }
+
+    /**
+     * 수강생 정보를 출력하는 메서드
+     */
+    public void displayStudentInfo(){
+        System.out.println("==================================");
+        System.out.println("수강생 정보를 조회합니다...");
+
+        Student student = findStudentByName(studentView.getStudentName());
+        if ( student == null ){
+            System.out.println("등록되어있지않은 수강생입니다.");
+            return;
+        }
+        studentView.displayStudentInfo(student);
+    }
+
+    /**
+     * 이름으로 수강생을 찾는 메서드
+     *
+     * @param name 찾고자 하는 수강생의 이름
+     * @return 찾은 수강생 객체, 없으면 null 반환
+     */
+    public Student findStudentByName(String name){
         for(Student st : studentList){
             if(st.getStudentName().equals(name)){
                 return st;
             }
         }
+        return null;
     }
 
+    /**
+     * 특정 수강생의 과목을 이름으로 찾는 메서드
+     *
+     * @param student   찾고자 하는 과목이 속한 수강생 객체
+     * @param name 찾고자 하는 과목의 이름
+     * @return 찾은 과목 객체, 없으면 null 반환
+     */
     public Subject findSubjectByName(Student student, String name){
-        for(Subject sb : student.getSubject()){
+        for(Subject sb : student.getSubjects()){
             if(sb.getSubjectName().equals(name)){
                 return sb;
             }
         }
+        return null;
     }
+
+    /**
+     * 주어진 타입과 개수에 맞는 과목을 선택하는 메서드
+     *
+     * @param type  선택할 과목의 타입 (필수/선택)
+     * @param count 선택할 과목의 개수
+     * @return 선택된 과목 리스트
+     */
     private List<Subject> selectSubjects(SubjectType type, int count) {
         // 과목 담당자로부터 과목을 선택하여 받아오는 기능이라고 가정
         // 실제로는 이 과정에 대한 코드가 들어가야 합니다.
         return new ArrayList<>(); // 임시로 빈 리스트 반환
     }
 
+    /**
+     * 특정 수강생의 과목을 ID로 찾는 메서드
+     *
+     * @param student 찾고자 하는 과목이 속한 수강생 객체
+     * @param id      찾고자 하는 과목의 ID
+     * @return 찾은 과목 객체, 없으면 null 반환
+     */
+    public Subject findSubjectById(Student student, String id){
+        return student.getSubjects().stream()
+                .filter(subject -> subject.getSubjectId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    /**
+     * 새로운 수강생 ID를 생성하는 메서드
+     *
+     * @return 새로 생성된 수강생 ID
+     */
     private String generateStudentId(){
         return "ST" + ( studentList.size() + 1 );
     }
