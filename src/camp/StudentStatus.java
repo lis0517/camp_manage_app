@@ -42,3 +42,4 @@ public enum StudentStatus {
         throw new IllegalArgumentException("Invalid status: " + status);
     }
 }
+
