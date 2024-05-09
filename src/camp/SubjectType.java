@@ -14,7 +14,7 @@ public class SubjectView {
         this.scanner = scanner;
     }
 
-    /*StudentView, ScoreView 예시 참고*/
+    /*StudentView, ScoreView 예시 참고*  /
 
     public String getSubjectName() {
         System.out.print("수강할 과목 이름 입력: ");
