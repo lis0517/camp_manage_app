@@ -1,4 +1,4 @@
-packagepackage camp.view;
+package camp.view;
 
 import camp.SubjectType;
 import camp.model.Subject;
