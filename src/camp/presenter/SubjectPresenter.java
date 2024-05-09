@@ -45,7 +45,7 @@ public class SubjectPresenter {
     }
 
 
-    // 기능 구현 (필수 과목 3개 이상, 선택 과목 2개 이상 선택하는  것  만들기)
+    // 기능 구현 (필수 과목 3개 이상, 선택 과목 2개 이상 선택하는 것 만들기)
 
     public List<Subject> selectSubjects(SubjectType type, int minCount) {
         List<Subject> subjects = subjectList.stream()
