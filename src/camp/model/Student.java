@@ -22,10 +22,10 @@ public class Student {
      * @param studentId 수강생 고유 ID
      * @param studentName 수강생 이름
      */
-    public Student(String studentId, String studentName){
+    public Student(String studentId, String studentName, List<Subject> subjects){
         this.studentId = studentId;
         this.studentName = studentName;
-        this.subjects = new ArrayList<>();
+        this.subjects = subjects;
     }
 
     /**
