@@ -22,7 +22,7 @@ public class MainView {
         System.out.println("내일배움캠프 수강생 관리 프로그램 실행 중...");
         System.out.println("1. 수강생 관리");
         System.out.println("2. 점수 관리");
-        System.out.println("4. 프로그램 종료");
+        System.out.println("3. 프로그램 종료");
         System.out.print("관리 항목을 선택하세요...");
         return UtilHelper.getIntInput(scanner);
     }
