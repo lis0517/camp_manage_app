@@ -190,6 +190,18 @@ public class StudentPresenter {
     }
 
     /**
+     * 특정 상태의 수강생 목록을 반환하는 메서드
+     *
+     * @param status 찾고자 하는 수강생의 상태
+     * @return 해당 상태의 수강생 목록
+     */
+    public List<Student> getStudentListByStatus(String status) {
+        return studentList.stream()
+                .filter(student -> student.getStatus().equals(status))
+                .toList();
+    }
+
+    /**
      * 새로운 수강생 ID를 생성하는 메서드
      *
      * @return 새로 생성된 수강생 ID
