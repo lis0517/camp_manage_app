@@ -26,6 +26,7 @@ public class Student {
         this.studentId = studentId;
         this.studentName = studentName;
         this.subjects = subjects;
+        this.status = StudentStatus.YELLOW;
     }
 
     /**

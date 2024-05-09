@@ -170,9 +170,7 @@ public class StudentPresenter {
      * @return 선택된 과목 리스트
      */
     private List<Subject> selectSubjects(SubjectType type, int count) {
-        // 과목 담당자로부터 과목을 선택하여 받아오는 기능이라고 가정
-        // 실제로는 이 과정에 대한 코드가 들어가야 합니다.
-        return new ArrayList<>(); // 임시로 빈 리스트 반환
+        return subjectPresenter.selectSubjects(type, count);
     }
 
     /**
