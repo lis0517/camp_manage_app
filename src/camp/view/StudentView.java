@@ -47,10 +47,8 @@ public class StudentView {
         }
 
         for(Student student : studentList) {
-            System.out.println("학생 ID: " + student.getStudentId());
-            System.out.println("이름: " + student.getName());
-            System.out.println("필수과목: " + student.getMandatorySubjects());
-            System.out.println("선택과목: " + student.getChoiceSubjects());
+            System.out.println("학생 ID: " + student.getStudentId() + "이름: " + student.getStudentName());
+
             System.out.println("----------------------------------");
         }
     }
