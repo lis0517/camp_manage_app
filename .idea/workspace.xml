@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b4b4f22-6f1d-46b5-a7ec-8fc56142a28a" name="Changes" comment="fads">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/camp/StudentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/StudentStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/camp/SubjectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/SubjectType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/camp/presenter/StudentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/presenter/StudentPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/camp/presenter/SubjectPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/presenter/SubjectPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/camp/view/SubjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/view/SubjectView.java" afterDir="false" />
-    </list>
+    <list default="true" id="3b4b4f22-6f1d-46b5-a7ec-8fc56142a28a" name="Changes" comment="fads" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,13 +39,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop1",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,7 +63,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715151311880</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fads">
+      <option name="closed" value="true" />
+      <created>1715245024793</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715245024793</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
