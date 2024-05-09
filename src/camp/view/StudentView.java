@@ -1,5 +1,8 @@
 package camp.view;
 
+import camp.model.Student;
+
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -28,6 +31,27 @@ public class StudentView {
         return scanner.nextInt();
     }
 
-    // ... 필요한 내용 더 구현
 
+    public String getStudentName(){
+        System.out.print("학생 이름을 입력해주세요: ");
+        return scanner.next();
+    }
+
+    public void displayStudentList(List<Student> studentList){
+        System.out.println("==================================");
+        System.out.println("수강생 목록을 조회합니다...");
+
+        if(studentList.isEmpty()) {
+            System.out.println("등록된 학생이 없습니다.");
+            return;
+        }
+
+        for(Student student : studentList) {
+            System.out.println("학생 ID: " + student.getStudentId());
+            System.out.println("이름: " + student.getName());
+            System.out.println("필수과목: " + student.getMandatorySubjects());
+            System.out.println("선택과목: " + student.getChoiceSubjects());
+            System.out.println("----------------------------------");
+        }
+    }
 }
