@@ -12,36 +12,31 @@ import java.util.Scanner;
 
 public class CampManagementApp {
 
-    private static MainView mainView;
-    private static StudentPresenter studentPresenter;
-    private static ScorePresenter scorePresenter;
-    
-    // 자기가 만든 presenter를 만들어서 테스트 해보기
-
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
-        mainView = new MainView(scanner);
-        studentPresenter = new StudentPresenter(new StudentView(scanner));
-        scorePresenter = new ScorePresenter(new ScoreView(scanner));
-        // 메인 화면 표시
-        displayMainView();
-    }
 
-    private static void displayMainView(){
+        MainView mainView = new MainView(scanner);
+        SubjectPresenter subjectPresenter = new SubjectPresenter(new SubjectView(scanner));
+        StudentPresenter studentPresenter = new StudentPresenter(new StudentView(scanner));
+        ScorePresenter scorePresenter = new ScorePresenter(new ScoreView(scanner));
+
+        studentPresenter.setSubjectPresenter( subjectPresenter );
+        scorePresenter.setStudentPresenter( studentPresenter );
+
+
+        // 메인 화면 표시
         boolean exit = false;
 
         while( !exit ){
             int input = mainView.displayMainMenu();
 
-
             switch (input){
-                 case 1 -> {
+                case 1 -> {
                     studentPresenter.manageStudent();
-                 }
+                }
                 case 2 -> {
                     scorePresenter.manageScore();
-                 }
+                }
                 case 3 -> {
                     exit = true;
                     System.out.println("프로그램을 종료합니다.");
