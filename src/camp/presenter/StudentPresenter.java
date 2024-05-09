@@ -7,6 +7,7 @@ import camp.view.StudentView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 수강생 관리 기능을 담당하는 Presenter 클래스
@@ -196,7 +197,7 @@ public class StudentPresenter {
     public List<Student> getStudentListByStatus(String status) {
         return studentList.stream()
                 .filter(student -> student.getStatus().equals(status))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     /**

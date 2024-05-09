@@ -50,7 +50,7 @@ public class SubjectPresenter {
     public List<Subject> selectSubjects(SubjectType type, int minCount) {
         List<Subject> subjects = subjectList.stream()
                 .filter(subject -> subject.getSubjectType() == type)
-                .toList();
+                .collect(Collectors.toList());
 
         subjectView.displaySubjectList(type, subjects);
 

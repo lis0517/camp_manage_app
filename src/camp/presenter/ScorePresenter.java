@@ -86,7 +86,6 @@ public class ScorePresenter {
         }
 
         int scoreValue = scoreView.getScore();
-        // TODO : getGrade(SubjectType.MANDATORY) <- 이 부분 다른 곳에서 정보 받아오는 것으로 수정하기
         scoreList.add(new Score(student.getStudentId(), subject.getSubjectId(), round, scoreValue,
                 getGrade(subject.getSubjectType(), scoreValue)));
         System.out.println("시험 점수 등록을 성공했습니다.");
