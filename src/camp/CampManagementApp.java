@@ -14,7 +14,6 @@ public class CampManagementApp {
 
     private static MainView mainView;
     private static StudentPresenter studentPresenter;
-    private static SubjectPresenter subjectPresenter;
     private static ScorePresenter scorePresenter;
     
     // 자기가 만든 presenter를 만들어서 테스트 해보기
@@ -26,7 +25,6 @@ public class CampManagementApp {
 
         mainView = new MainView(scanner);
         studentPresenter = new StudentPresenter(new StudentView(scanner));
-        subjectPresenter = new SubjectPresenter(new SubjectView(scanner));
         scorePresenter = new ScorePresenter(new ScoreView(scanner));
         // 메인 화면 표시
         displayMainView();
@@ -49,11 +47,7 @@ public class CampManagementApp {
 //                    System.out.println("점수 관리 화면으로 이동합니다.");// 점수 등록
 //                    int scoreInput = scorePresenter.displayScoreMenu();// ScorePresenter 에 Menu호출메서드추가.
 //                }
-//                case 3 -> {
-//                    System.out.println("과목별 관리 화면으로 이동합니다.");// 과목 등록 만들어 지면 변경
-//                    int subjectInput = subjcetPresenter.displaySubjectMenu();
-//                }
-                case 4 -> {
+                case 3 -> {
                     exit = true;
                     System.out.println("프로그램을 종료합니다.");
                 }
