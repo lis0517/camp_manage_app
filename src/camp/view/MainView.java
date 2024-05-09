@@ -1,5 +1,7 @@
 package camp.view;
 
+import camp.UtilHelper;
+
 import java.util.Scanner;
 
 public class MainView {
@@ -22,6 +24,6 @@ public class MainView {
         System.out.println("2. 점수 관리");
         System.out.println("4. 프로그램 종료");
         System.out.print("관리 항목을 선택하세요...");
-        return scanner.nextInt();
+        return UtilHelper.getIntInput(scanner);
     }
 }

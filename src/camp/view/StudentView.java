@@ -1,6 +1,7 @@
 package camp.view;
 
 import camp.StudentStatus;
+import camp.UtilHelper;
 import camp.model.Student;
 import camp.model.Subject;
 
@@ -37,7 +38,7 @@ public class StudentView {
         System.out.println("4. 수강생 정보 조회");
         System.out.println("5. 메인 화면 이동");
         System.out.print("관리 항목을 선택하세요...");
-        return scanner.nextInt();
+        return UtilHelper.getIntInput(scanner);
     }
 
 
@@ -62,7 +63,7 @@ public class StudentView {
         System.out.print("수강생의 상태를 선택해주세요.(1.좋음, 2.나쁨, 3.보통): ");
         int status;
         while(true){ // 올바른 값이 입력 될 때까지 반복
-            status = scanner.nextInt();
+            status = UtilHelper.getIntInput(scanner);
             scanner.nextLine();
             if ( status < 1 || status > 3 ){
                 System.out.println("정의되지않은 수강생의 상태입니다.");
@@ -92,7 +93,7 @@ public class StudentView {
         }
 
         for(Student student : studentList) {
-            System.out.println("학생 ID: " + student.getStudentId() + "이름: " + student.getStudentName());
+            System.out.println("학생 ID: " + student.getStudentId() + ", 이름: " + student.getStudentName());
 
             System.out.println("----------------------------------");
         }
