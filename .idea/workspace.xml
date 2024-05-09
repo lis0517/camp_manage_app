@@ -4,105 +4,77 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9658d4c7-4097-4451-8367-f5b700804e3a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/camp_manage_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/CampManagementApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/StudentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/SubjectType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/model/Score.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/model/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/presenter/ScorePresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/presenter/StudentPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/presenter/SubjectPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/view/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/view/ScoreView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/view/StudentView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/camp/view/SubjectView.java" afterDir="false" />
+    <list default="true" id="3b4b4f22-6f1d-46b5-a7ec-8fc56142a28a" name="Changes" comment="fads">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/camp/StudentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/StudentStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/camp/SubjectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/SubjectType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/camp/presenter/StudentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/presenter/StudentPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/camp/presenter/SubjectPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/presenter/SubjectPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/camp/view/SubjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/camp/view/SubjectView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lhu0505&quot;
+  }
 }</component>
-  <component name="ProjectId" id="2fwoeJcFaaEdZSVB9VmijTRrYGA" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lis0517/camp_manage_app.git&quot;,
+    &quot;accountId&quot;: &quot;23ac1dac-4f9e-43e9-bd3a-a8cfc3ff3b97&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2gAr9mG4bmc1nHcLqskGyyPSSIo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.CampManagementApp.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "openjdk-22",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lis05/Downloads/camp-management-app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "develop1",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lis05\OneDrive\Desktop\Java\camp_manage_app" />
-    </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9658d4c7-4097-4451-8367-f5b700804e3a" name="Changes" comment="" />
-      <created>1714721594323</created>
+      <changelist id="3b4b4f22-6f1d-46b5-a7ec-8fc56142a28a" name="Changes" comment="" />
+      <created>1715151073702</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1714721594323</updated>
-      <workItem from="1714721595353" duration="526000" />
-      <workItem from="1714722156540" duration="9481000" />
-      <workItem from="1714793902995" duration="3242000" />
+      <updated>1715151073702</updated>
     </task>
+    <task id="LOCAL-00001" summary="fads">
+      <option name="closed" value="true" />
+      <created>1715151311880</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715151311880</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fads" />
+    <option name="LAST_COMMIT_MESSAGE" value="fads" />
   </component>
 </project>
