@@ -48,7 +48,7 @@ public class StudentView {
      */
     public String getStudentName(){
         System.out.print("수강생의 이름을 입력해주세요: ");
-        String name = scanner.next();
+        String name = scanner.next().trim();
         scanner.nextLine();
         return name;
     }
