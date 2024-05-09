@@ -13,7 +13,6 @@ entity Subject {
 }
 
 entity Score {
-    scoreId: string <<PK>>
     studentId: string <<FK>>
     subjectId: string <<FK>>
     round: int
