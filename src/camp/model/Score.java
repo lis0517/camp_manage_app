@@ -1,8 +1,6 @@
 package camp.model;
 
 public class Score {
-    // 점수 고유 ID
-    private String scoreId;
     // 점수가 속한 수강생 ID
     private String studentId;
     // 점수가 속한 과목 ID
@@ -17,14 +15,12 @@ public class Score {
 
     /**
      * Score 클래스의 생성자
-     * @param scoreId 점수 고유 ID
      * @param studentId 점수가 속한 수강생 ID
      * @param subjectId 점수가 속한 과목 ID
      * @param round 시험 회차
      * @param score 점수
      */
-    public Score(String scoreId, String studentId, String subjectId, int round, int score, String grade) {
-        this.scoreId = scoreId;
+    public Score(String studentId, String subjectId, int round, int score, String grade) {
         this.studentId = studentId;
         this.subjectId = subjectId;
         this.round = round;
@@ -33,14 +29,6 @@ public class Score {
     }
 
     // Getters and Setters
-    /**
-     * 점수 고유 ID를 반환하는 메서드
-     * @return 점수 고유 ID
-     */
-    public String getScoreId() {
-        return scoreId;
-    }
-
     /**
      * 점수가 속한 수강생 ID를 반환하는 메서드
      * @return 수강생 ID
