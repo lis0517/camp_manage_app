@@ -1,40 +1,44 @@
-package camp.view;
+package camp;
 
-import camp.SubjectType;
-import camp.model.Subject;
+/**
+ * 과목 타입을 나타내는 enum
+ */
+public enum SubjectType {
+    MANDATORY("Mandatory"), // 필수 과목
+    CHOICE("Choice"); // 선택 과목
 
-import java.util.List;
-import java.util.Scanner;
+    /*과목 타입의 문자열 표현*/
+    private final String type;
 
-public class SubjectView {
-
-    Scanner scanner;
-
-    public SubjectView(Scanner scanner) {
-        this.scanner = scanner;
+    /**
+     * @param type 과목 타입의 문자열 표현
+     */
+    SubjectType(String type){
+        this.type = type;
     }
 
-    /*StudentView, ScoreView 예시 참고*/
-
-    public String getSubjectName() {
-        System.out.print("수강할 과목 이름 입력: ");
-        return scanner.nextLine();
+    /**
+     * 과목 타입의 문자열 표현을 반환하는 메서드
+     *
+     * @return 과목 타입의 문자열 표현
+     */
+    public String getTypeText() {
+        return type;
     }
 
-    public void displaySubjectList(SubjectType type, List<Subject> subjectList) {
-        if (subjectList.isEmpty()){
-            System.out.println("과목 목록이 비어있습니다.");
-            return;
+    /**
+     * 문자열로부터 해당하는 SubjectType 상수를 찾아 반환하는 메서드
+     *
+     * @param type 찾고자 하는 과목 타입의 문자열
+     * @return 문자열에 해당하는 SubjectType 상수
+     * @throws IllegalArgumentException 해당하는 과목 타입이 없는 경우
+     */
+    public static SubjectType fromString(String type){
+        for( SubjectType subjectType : SubjectType.values()){
+            if (subjectType.type.equalsIgnoreCase(type)){
+                return subjectType;
+            }
         }
-
-        System.out.println(type == SubjectType.MANDATORY ? "필수 과목 목록" : "선택 과목 목록");
-        System.out.println("================");
-
-        for (Subject subject : subjectList) {
-            System.out.println(subject.getSubjectName());
-            System.out.println("----------------");
-        }
+        throw new IllegalArgumentException("Invalid subject type: " + type);
     }
-
-
 }
