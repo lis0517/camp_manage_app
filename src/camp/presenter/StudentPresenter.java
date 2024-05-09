@@ -23,6 +23,7 @@ public class StudentPresenter {
     public StudentPresenter(StudentView studentView) {
         this.studentView = studentView;
         this.studentList = new ArrayList<>();
+        this.subjectPresenter=null;
     }
 
     public void manageStudent() {
@@ -52,8 +53,9 @@ public class StudentPresenter {
         // 최소 개수가 모자라면 어떻게 할지도 생각해보시면 좋습니다.
 
         // 넘어온 리스트 합쳐서 등록하기
-        Student student = new Student(generateStudentId(), name, mandatorySubjects, choiceSubjects);
-        studentList.add(student);
+        List<Subject> allSubjects = new ArrayList<>();
+        allSubjects.addAll(mandatorySubjects);
+        allSubjects.addAll(choiceSubjects);
         // 기능 구현
         System.out.println("수강생 등록 성공!\n");
     }
@@ -63,7 +65,22 @@ public class StudentPresenter {
         System.out.println("수강생 목록을 조회합니다...");
         studentView.displayStudentList(studentList);
     }
+    //이름으로 찾아오기.
+    public Student findByName(String name){
+        for(Student st : studentList){
+            if(st.getStudentName().equals(name)){
+                return st;
+            }
+        }
+    }
 
+    public Subject findSubjectByName(Student student, String name){
+        for(Subject sb : student.getSubject()){
+            if(sb.getSubjectName().equals(name)){
+                return sb;
+            }
+        }
+    }
     private List<Subject> selectSubjects(SubjectType type, int count) {
         // 과목 담당자로부터 과목을 선택하여 받아오는 기능이라고 가정
         // 실제로는 이 과정에 대한 코드가 들어가야 합니다.
